@@ -1,0 +1,68 @@
+<mvc:View
+    controllerName="todoapp.controller.TodoList"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+
+    <Page title="Lista de Tarefas">
+        <content>
+
+            <SearchField
+                liveChange=".onSearch"
+                placeholder="Buscar por título..."
+                class="sapUiSmallMargin"/>
+
+            <List
+                id="todoList"
+                busy="{view>/busy}"
+                items="{todos>/data}">
+
+                <CustomListItem>
+                    <HBox
+                        justifyContent="SpaceBetween"
+                        alignItems="Center"
+                        width="100%">
+
+                        <VBox>
+                            <Text
+                                text="{todos>title}"
+                                class="{= ${todos>completed} ? 'completedTodo' : '' }"/>
+
+                            <Text text="Usuário: {todos>userId}"/>
+                        </VBox>
+
+                        <HBox alignItems="Center">
+
+                            <CheckBox
+                                selected="{todos>completed}"
+                                select=".onCompletedChange"/>
+
+                            <Button
+                                text="Detalhes"
+                                press=".onDetails"/>
+
+                        </HBox>
+
+                    </HBox>
+                </CustomListItem>
+
+            </List>
+
+            <Toolbar>
+                <Button
+                    text="Anterior"
+                    press=".onPrevious"/>
+
+                <ToolbarSpacer/>
+
+                <Text text="{view>/pageText}"/>
+
+                <ToolbarSpacer/>
+
+                <Button
+                    text="Próxima"
+                    press=".onNext"/>
+            </Toolbar>
+
+        </content>
+    </Page>
+</mvc:View>

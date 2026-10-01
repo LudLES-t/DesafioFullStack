@@ -1,0 +1,28 @@
+{
+  "_version": "1.65.0",
+
+  "sap.app": {
+    "id": "todoapp",
+    "type": "application",
+    "title": "Todo App"
+  },
+
+  "sap.ui": {
+    "technology": "UI5"
+  },
+
+  "sap.ui5": {
+    "dependencies": {
+      "libs": {
+        "sap.m": {}
+      }
+    },
+
+    "rootView": {
+      "viewName": "todoapp.view.TodoList",
+      "type": "XML",
+      "async": false,
+      "id": "todoListView"
+    }
+  }
+}

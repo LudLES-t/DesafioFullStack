@@ -1,0 +1,28 @@
+<mvc:View
+    controllerName="todoapp.controller.TodoDetail"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+
+    <Page
+        title="Detalhes"
+        showNavButton="true"
+        navButtonPress=".onBack">
+
+        <content>
+
+            <VBox class="sapUiMediumMargin">
+
+                <Title text="{todo>/title}"/>
+
+                <Text text="ID: {todo>/id}"/>
+
+                <Text text="Usuário: {todo>/userId}"/>
+
+                <Text text="Concluída: {todo>/completed}"/>
+
+            </VBox>
+
+        </content>
+    </Page>
+
+</mvc:View>
